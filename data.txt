@@ -1,0 +1,14 @@
+CREATE TABLE Track (
+    track_id INTEGER NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    len INTEGER,
+    rating INTEGER,
+    count INTEGER,
+    album_id INTEGER,
+    genre_id INTEGER,
+    PRIMARY KEY(track_id),
+    INDEX USING BTREE (title),
+    )
+
+
+SELECT DISTINCT Artist.name, Genre.name FROM Track JOIN Album JOIN Genre join Artist on Track.album_id = Album.album_id AND Album.artist_id = Artist.artist_id WHERE Artist.name = 'Led Zepplin';
